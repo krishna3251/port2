@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna Soni - Developer · Gamer · Creator</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loader"></div>
+    </div>
+    
+    <!-- Three.js Canvas for Falling Stars Background -->
+    <canvas id="bg-canvas"></canvas>
+    <!-- Enhanced Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top cyber-navbar">
+        <div class="container">
+            <!-- K.S logo with theme changer -->
+            <a class="navbar-brand" href="#" id="ksLogo">
+                <span class="neon-text">K.S</span>
+                
+                <!-- Theme Palette (attached to K.S logo) -->
+                <div class="theme-palette hidden" id="themePalette">
+                    <div class="theme-header">Choose Theme</div>
+                    <div class="theme-option active" data-theme="cyberpunk">
+                        <div class="theme-color" style="background: linear-gradient(45deg, #00fff7, #ff00ff)"></div>
+                        <span>Cyberpunk</span>
+                    </div>
+                    <div class="theme-option" data-theme="ocean">
+                        <div class="theme-color" style="background: linear-gradient(45deg, #0ea5e9, #3b82f6)"></div>
+                        <span>Ocean Blue</span>
+                    </div>
+                    <div class="theme-option" data-theme="matrix">
+                        <div class="theme-color" style="background: linear-gradient(45deg, #22c55e, #16a34a)"></div>
+                        <span>Matrix Green</span>
+                    </div>
+                    <div class="theme-option" data-theme="golden">
+                        <div class="theme-color" style="background: linear-gradient(45deg, #f59e0b, #d97706)"></div>
+                        <span>Golden Amber</span>
+                    </div>
+                    <div class="theme-option" data-theme="purple">
+                        <div class="theme-color" style="background: linear-gradient(45deg, #a855f7, #9333ea)"></div>
+                        <span>Royal Purple</span>
+                    </div>
+                    <div class="theme-option" data-theme="sakura">
+                        <div class="theme-color" style="background: linear-gradient(45deg, #ec4899, #db2777)"></div>
+                        <span>Sakura Pink</span>
+                    </div>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler cyber-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link cyber-nav-link" href="#home">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cyber-nav-link" href="#about">
+                            <i class="fas fa-user"></i> About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cyber-nav-link" href="#projects">
+                            <i class="fas fa-code"></i> Projects
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cyber-nav-link" href="#skills">
+                            <i class="fas fa-microchip"></i> Skills
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cyber-nav-link" href="#achievements">
+                            <i class="fas fa-trophy"></i> Achievements
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link cyber-nav-link" href="#contact">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Fixed Structure -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <!-- Orbit container should not interfere with text/buttons -->
+                <div class="orbit-container">
+                    <!-- 4 orbit rings with proper positioning -->
+                    <div class="orbit orbit-1">
+                        <i class="orbit-icon fas fa-laptop primary"></i>
+                        <i class="orbit-icon fas fa-robot accent"></i>
+                    </div>
+                    <div class="orbit orbit-2">
+                        <i class="orbit-icon fab fa-discord primary clickable easter-egg" data-url="https://discord.gg/nZaXfRnfjH"></i>
+                        <i class="orbit-icon fab fa-github secondary clickable easter-egg" data-url="https://github.com/krishna3251"></i>
+                    </div>
+                    <div class="orbit orbit-3">
+                        <i class="orbit-icon fas fa-brain tertiary"></i>
+                        <i class="orbit-icon fab fa-instagram tertiary clickable easter-egg" data-url="https://www.instagram.com/krishna_sanskari69?igsh=dmlmeTdsMG5oYmll"></i>
+                    </div>
+                    <div class="orbit orbit-4">
+                        <i class="orbit-icon fas fa-gamepad secondary"></i>
+                        <i class="orbit-icon fab fa-python tertiary"></i>
+                    </div>
+                </div>
+                
+                <!-- Main content with proper z-index -->
+                <div class="hero-main-content">
+                    <h1 class="hero-title">KRISHNA SONI</h1>
+                    <p class="hero-subtitle">Developer · Gamer · Creator</p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#projects" class="cyber-btn">View Projects</a>
+                        <a href="#contact" class="cyber-btn cyber-btn-outline">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="profile-container">
+                        <div class="profile-image">
+                            <div class="avatar-placeholder">
+                                
+                              <img src="krishna.jpg" alt="Profile" class="profile-pic">
+                            </div>
+                            <div class="neon-border"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="about-content">
+                        <h2 class="section-title neon-text">About Me</h2>
+                        <p class="about-bio">
+                            Passionate BCA student specializing in AI bot development and Discord automation. 
+                            Currently pursuing Computer Applications at Siddhartha Degree College, Hyderabad. 
+                            Expert in creating intelligent Discord bots with advanced moderation and AI capabilities.
+                        </p>
+                        
+                        <div class="about-details">
+                            <div class="detail-item">
+                                <i class="fas fa-graduation-cap neon-icon"></i>
+                                <span>BCA, Siddhartha Degree College, Hyderabad</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt neon-icon"></i>
+                                <span>Hyderabad, Telangana, India</span>
+                            </div>
+                        </div>
+                        
+                        <div class="interests">
+                            <h4>Interests</h4>
+                            <div class="interest-tags">
+                                <span class="interest-tag">
+                                    <i class="fas fa-robot"></i> Bot Development
+                                </span>
+                                <span class="interest-tag">
+                                    <i class="fas fa-brain"></i> AI/ML
+                                </span>
+                                <span class="interest-tag">
+                                    <i class="fas fa-gamepad"></i> Gaming
+                                </span>
+                                <span class="interest-tag">
+                                    <i class="fab fa-discord"></i> Discord Automation
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title text-center neon-text">Projects</h2>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>Lexus AI Moderation Bot</h4>
+                            <span class="project-type">Discord Bot</span>
+                        </div>
+                        <div class="project-body">
+                            <p>Advanced AI-powered Discord moderation bot with intelligent content filtering, automated moderation features, and natural language processing capabilities for community management.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Discord.py</span>
+                                <span class="tech-tag">AI/ML</span>
+                                <span class="tech-tag">NLP</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/krishna3251/lexus_dc.git" class="project-btn" target="_blank" title="GitHub Repository">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>Damu Server Setup Bot</h4>
+                            <span class="project-type">Discord Bot</span>
+                        </div>
+                        <div class="project-body">
+                            <p>Automated Discord server configuration bot that streamlines server setup with customizable templates, permission management, and channel organization features.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Discord.py</span>
+                                <span class="tech-tag">JSON</span>
+                                <span class="tech-tag">Automation</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://replit.com/@krishnasoni3251/IgnorantStunningAlgorithm?v=1" class="project-btn" target="_blank" title="Live Demo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>Rule 34 Bot</h4>
+                            <span class="project-type">Discord Bot</span>
+                        </div>
+                        <div class="project-body">
+                            <p>Content discovery and management bot with advanced filtering capabilities, search functionality, and automated content moderation for community guidelines.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">APIs</span>
+                                <span class="tech-tag">Web Scraping</span>
+                                <span class="tech-tag">Discord.py</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://replit.com/@krishnasoni3251/r34?v=1" class="project-btn" target="_blank" title="Live Demo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>Ruiya YT Moderation & AI Chat Bot</h4>
+                            <span class="project-type">AI Chat Bot</span>
+                        </div>
+                        <div class="project-body">
+                            <p>Multi-purpose YouTube moderation bot with AI chat capabilities, content management features, and intelligent response system for community interaction.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">YouTube API</span>
+                                <span class="tech-tag">AI/ML</span>
+                                <span class="tech-tag">Chat Processing</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://replit.com/@rukia3287/rukiya-20?v=1" class="project-btn" target="_blank" title="Live Demo">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title text-center neon-text">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-icon">🐍</div>
+                    <span class="skill-name">Python</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-skill="54"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-icon">🤖</div>
+                    <span class="skill-name">Discord.py</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-skill="56"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-icon">🧠</div>
+                    <span class="skill-name">AI/ML</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-skill="20"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-icon">🎨</div>
+                    <span class="skill-name">HTML/CSS</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-skill="90"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-icon">🔗</div>
+                    <span class="skill-name">APIs</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-skill="5"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-icon">⚡</div>
+                    <span class="skill-name">JavaScript</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-skill="45"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-icon">☕</div>
+                    <span class="skill-name">Java</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-skill="64"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-icon">🔧</div>
+                    <span class="skill-name">C++</span>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-skill="80"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements-section">
+        <div class="container">
+            <h2 class="section-title text-center neon-text">Achievements</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🚀</div>
+                        <h4>ISRO AI/ML Certification</h4>
+                        <p>Completed advanced certification in Artificial Intelligence and Machine Learning from ISRO</p>
+                        <span class="achievement-year">2024</span>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🤖</div>
+                        <h4>Discord Bot Specialist</h4>
+                        <p>Developed multiple advanced Discord bots including Lexus AI Moderation and Damu Server Setup Bot</p>
+                        <span class="achievement-year">2025</span>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🧠</div>
+                        <h4>AI Integration Expert</h4>
+                        <p>Successfully integrated AI and machine learning capabilities into Discord bot ecosystems</p>
+                        <span class="achievement-year">2025</span>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">👥</div>
+                        <h4>Community Builder</h4>
+                        <p>Created automated solutions for Discord community management and server organization</p>
+                        <span class="achievement-year">2025</span>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🌟</div>
+                        <h4>Open Source Contributor</h4>
+                        <p>Contributing to Discord bot development community with innovative automation solutions</p>
+                        <span class="achievement-year">2025</span>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🐍</div>
+                        <h4>Python Developer</h4>
+                        <p>Advanced Python programming skills with focus on Discord.py and AI/ML integration</p>
+                        <span class="achievement-year">2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title text-center neon-text">Contact</h2>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="contact-info">
+                        <h4>Let's Connect</h4>
+                        <p>Ready to collaborate or discuss exciting projects? Reach out through any platform!</p>
+                        
+                        <div class="social-links">
+                            <a href="https://github.com/krishna3251" class="social-link" target="_blank">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://discord.gg/nZaXfRnfjH" class="social-link" target="_blank">
+                                <i class="fab fa-discord"></i>
+                                <span>Discord</span>
+                            </a>
+                            <a href="https://www.instagram.com/krishna_sanskari69?igsh=dmlmeTdsMG5oYmll" class="social-link" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="mailto:krishna.soni@example.com" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                                <span>Email</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/mnnzewde" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control cyber-input" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control cyber-input" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control cyber-input" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn cyber-btn w-100">
+                            <span>Send Message</span>
+                            <div class="ripple"></div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="neon-line"></div>
+            <p class="footer-text">
+                © 2025 Krishna Soni | Designed with ❤️ 
+            </p>
+            <div class="spaceship">
+                <i class="fas fa-rocket"></i>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Three.js for Falling Stars -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
